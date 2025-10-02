@@ -129,6 +129,106 @@ export default function About() {
           ],
       avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
     },
+    {
+      name: "Trần Huy Hanh",
+      role: isVietnamese
+        ? "Thiết kế & Phát triển Web, AI Chatbot, Quản trị Server"
+        : "Web Design & Development, AI Chatbot, Server Administration",
+      contributions: isVietnamese
+        ? [
+            "Thiết kế và xây dựng giao diện người dùng",
+            "Tích hợp AI Chatbot với Groq",
+               "Lập trình chức năng quiz",
+            "Quản lý cơ sở dữ liệu Supabase",
+            "Triển khai và bảo trì server",
+          ]
+        : [
+            "Design and build user interface",
+            "Integrate AI Chatbot with Groq",
+                    "Program quiz functionality",
+            "Manage Supabase database",
+            "Deploy and maintain server",
+          ],
+      avatar: "/image.png",
+    },
+    {
+      name: "Trí Trần",
+      role: isVietnamese
+        ? "Chiến lược Nội dung, Phát triển Tài nguyên, Thiết kế Quiz"
+        : "Content Strategy, Visual Asset Development, Quiz Design",
+      contributions: isVietnamese
+        ? [
+            "Xây dựng chiến lược nội dung",
+            "Sáng tạo tài nguyên hình ảnh",
+            "Thiết kế câu hỏi quiz",
+            "Đảm bảo chất lượng nội dung",
+          ]
+        : [
+            "Build content strategy",
+            "Create visual assets",
+            "Design quiz questions",
+            "Ensure content quality",
+          ],
+      avatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg",
+    },
+    {
+      name: "Tạ Thị Hải Yến",
+      role: isVietnamese
+        ? "Sáng tạo Nội dung, Quản lý Hình ảnh, Phát triển Quiz"
+        : "Content Creation, Image Curation, Educational Quiz Development",
+      contributions: isVietnamese
+        ? [
+            "Viết và biên tập nội dung giáo dục",
+            "Lựa chọn và tối ưu hóa hình ảnh",
+            "Phát triển câu hỏi giáo dục",
+            "Kiểm tra độ chính xác nội dung",
+          ]
+        : [
+            "Write and edit educational content",
+            "Select and optimize images",
+            "Develop educational questions",
+            "Verify content accuracy",
+          ],
+      avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
+    },
+    {
+      name: "Gia Bảo",
+      role: isVietnamese
+        ? "Phát triển & Kiểm thử Quiz, Tài liệu Kỹ thuật"
+        : "Quiz Development & Testing, Technical Documentation",
+      contributions: isVietnamese
+        ? [
+         
+            "Kiểm thử và đảm bảo chất lượng",
+            "Viết tài liệu kỹ thuật",
+            "Tối ưu hóa trải nghiệm người dùng",
+          ]
+        : [
+    
+            "Test and ensure quality",
+            "Write technical documentation",
+            "Optimize user experience",
+          ],
+      avatar: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg",
+    },
+    {
+      name: "Nguyễn Đức Tuyên",
+      role: isVietnamese
+        ? "Thiết kế Bài thuyết trình, Triển khai Quiz, Kiểm thử UX"
+        : "Presentation Design, Quiz Implementation, User Experience Testing",
+      contributions: isVietnamese
+        ? [
+            "Thiết kế bài thuyết trình dự án",
+            "Kiểm thử trải nghiệm người dùng",
+            "Thu thập và phân tích phản hồi",
+          ]
+        : [
+            "Design project presentations",
+            "Test user experience",
+            "Collect and analyze feedback",
+          ],
+      avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+    },
   ];
 
   useEffect(() => {
@@ -443,13 +543,13 @@ export default function About() {
                     className="flex-shrink-0 w-[280px] snap-center"
                   >
                     <div className="bg-white/10 backdrop-blur-md rounded-full border border-white/15 shadow-2xl p-8 hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105 h-[280px] w-[280px] flex flex-col items-center justify-center text-center">
-                      <div className="mb-4">
+                      {/* <div className="mb-4">
                         <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-red-600 via-purple-700 to-fuchsia-700 flex items-center justify-center shadow-lg">
                           <span className="text-2xl font-bold text-white">
                             {member.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
                           </span>
                         </div>
-                      </div>
+                      </div> */}
 
                       <h3 className="text-lg font-bold text-white mb-2 line-clamp-2">
                         {member.name}
