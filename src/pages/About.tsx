@@ -148,8 +148,17 @@ export default function About() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section className="relative min-h-screen pt-20 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-red-800/40 via-purple-900/50 to-fuchsia-900/60" />
+      <div className="pointer-events-none absolute inset-0 [box-shadow:inset_0_0_220px_rgba(0,0,0,0.6)]" />
+      <motion.div
+        aria-hidden
+        className="absolute inset-y-0 -left-1/3 w-1/4 bg-white/5 blur-3xl"
+        animate={{ x: ["0%", "180%"] }}
+        transition={{ duration: 16, ease: "linear", repeat: Infinity }}
+      />
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -164,10 +173,10 @@ export default function About() {
               <BookOpen className="h-12 w-12 text-white" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-600 via-purple-700 to-fuchsia-700 bg-clip-text text-transparent mb-4">
+            <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-white via-amber-100 to-pink-100 bg-clip-text text-transparent mb-4">
               {isVietnamese ? "Giới thiệu" : "About Us"}
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-white/85 max-w-3xl mx-auto">
               {isVietnamese
                 ? "Gặp gỡ đội ngũ và công nghệ đằng sau dự án"
                 : "Meet the team and technology behind the project"}
@@ -179,13 +188,13 @@ export default function About() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg p-8"
+              className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 shadow-lg p-8"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl">
                   <Brain className="h-6 w-6 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                <h2 className="text-2xl font-bold text-white">
                   {isVietnamese ? "Công cụ AI của chúng tôi" : "Our AI Tools"}
                 </h2>
               </div>
@@ -197,41 +206,41 @@ export default function About() {
               ) : (
                 systemInfo && (
                   <div className="space-y-4">
-                    <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-                      <Bot className="h-5 w-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start gap-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10">
+                      <Bot className="h-5 w-5 text-purple-400 mt-0.5 flex-shrink-0" />
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                        <p className="text-sm font-semibold text-white mb-1">
                           {isVietnamese ? "Mô hình AI hiện tại" : "Current AI Model"}
                         </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                        <p className="text-sm text-white/80">
                           {systemInfo.groqModel}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-                      <Code className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start gap-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10">
+                      <Code className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                        <p className="text-sm font-semibold text-white mb-1">
                           Bolt New
                         </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                        <p className="text-sm text-white/80">
                           v{systemInfo.boltVersion}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-                      <Database className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start gap-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10">
+                      <Database className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                        <p className="text-sm font-semibold text-white mb-1">
                           {isVietnamese ? "Công cụ hoạt động" : "Active Tools"}
                         </p>
                         <div className="flex flex-wrap gap-2 mt-2">
                           {systemInfo.activeTools.map((tool) => (
                             <span
                               key={tool}
-                              className="px-2 py-1 text-xs font-medium bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-600"
+                              className="px-2 py-1 text-xs font-medium bg-white/20 text-white rounded-lg border border-white/20"
                             >
                               {tool}
                             </span>
@@ -248,13 +257,13 @@ export default function About() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg p-8"
+              className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 shadow-lg p-8"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl">
                   <Server className="h-6 w-6 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                <h2 className="text-2xl font-bold text-white">
                   {isVietnamese ? "Thông tin hệ thống" : "System Information"}
                 </h2>
               </div>
@@ -266,49 +275,49 @@ export default function About() {
               ) : (
                 systemInfo && (
                   <div className="space-y-4">
-                    <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-                      <Database className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start gap-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10">
+                      <Database className="h-5 w-5 text-emerald-400 mt-0.5 flex-shrink-0" />
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                        <p className="text-sm font-semibold text-white mb-1">
                           Supabase
                         </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                        <p className="text-sm text-white/80">
                           v{systemInfo.supabaseVersion}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-                      <Code className="h-5 w-5 text-cyan-600 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start gap-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10">
+                      <Code className="h-5 w-5 text-cyan-400 mt-0.5 flex-shrink-0" />
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                        <p className="text-sm font-semibold text-white mb-1">
                           React
                         </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                        <p className="text-sm text-white/80">
                           v{systemInfo.reactVersion}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-                      <Code className="h-5 w-5 text-violet-600 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start gap-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/10">
+                      <Code className="h-5 w-5 text-violet-400 mt-0.5 flex-shrink-0" />
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                        <p className="text-sm font-semibold text-white mb-1">
                           Vite
                         </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                        <p className="text-sm text-white/80">
                           v{systemInfo.viteVersion}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-4 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl border border-green-200 dark:border-green-800">
-                      <Calendar className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                    <div className="flex items-start gap-3 p-4 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl border border-green-400/30">
+                      <Calendar className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                        <p className="text-sm font-semibold text-white mb-1">
                           {isVietnamese ? "Trạng thái Server" : "Server Status"}
                         </p>
-                        <p className="text-sm text-green-700 dark:text-green-400 font-medium">
+                        <p className="text-sm text-green-300 font-medium">
                           {systemInfo.serverStatus}
                         </p>
                       </div>
@@ -328,11 +337,11 @@ export default function About() {
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 mb-4">
                 <Users className="h-8 w-8 text-purple-600" />
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+                <h2 className="text-3xl font-bold text-white">
                   {isVietnamese ? "Đội ngũ của chúng tôi" : "Our Team"}
                 </h2>
               </div>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-white/85">
                 {isVietnamese
                   ? "Những người đã xây dựng và phát triển dự án này"
                   : "The people who built and developed this project"}
@@ -347,7 +356,7 @@ export default function About() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg overflow-hidden"
+                  className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 shadow-lg overflow-hidden"
                 >
                   <div className="relative h-48 bg-gradient-to-br from-red-600 via-purple-700 to-fuchsia-700 overflow-hidden">
                     <img
@@ -359,7 +368,7 @@ export default function About() {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    <h3 className="text-xl font-bold text-white mb-2">
                       {member.name}
                     </h3>
                     <p className="text-sm text-purple-600 dark:text-purple-400 font-medium mb-4">
@@ -367,14 +376,14 @@ export default function About() {
                     </p>
 
                     <div className="space-y-2">
-                      <p className="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
+                      <p className="text-xs font-semibold text-white/90 uppercase tracking-wide">
                         {isVietnamese ? "Đóng góp chính" : "Key Contributions"}
                       </p>
                       <ul className="space-y-1.5">
                         {member.contributions.map((contribution, idx) => (
                           <li
                             key={idx}
-                            className="text-sm text-gray-600 dark:text-gray-400 flex items-start gap-2"
+                            className="text-sm text-white/80 flex items-start gap-2"
                           >
                             <span className="text-purple-600 mt-1">•</span>
                             <span>{contribution}</span>
@@ -389,6 +398,6 @@ export default function About() {
           </motion.section>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
