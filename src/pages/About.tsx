@@ -400,12 +400,12 @@ export default function About() {
               </div>
             </div>
           </motion.section>
-           <motion.section
+
+          <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-16 "
-            
+            className="mt-16"
           >
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 mb-4">
@@ -414,53 +414,81 @@ export default function About() {
                   {isVietnamese ? "Đội ngũ của chúng tôi" : "Our Team"}
                 </h2>
               </div>
-              <p className="text-white/85">
+              <p className="text-white/85 mb-2">
                 {isVietnamese
                   ? "Những người đã xây dựng và phát triển dự án này"
                   : "The people who built and developed this project"}
               </p>
+              <p className="text-white/60 text-sm">
+                {isVietnamese
+                  ? "← Vuốt để xem thêm →"
+                  : "← Swipe to see more →"}
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {teamMembers.map((member, index) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  whileHover={{ y: -8 }}
-                  className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 shadow-lg overflow-hidden"
-                >
-                
+            <div className="relative px-4">
+              <div
+                className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide"
+                style={{
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none',
+                }}
+              >
+                {teamMembers.map((member, index) => (
+                  <motion.div
+                    key={member.name}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    className="flex-shrink-0 w-[280px] snap-center"
+                  >
+                    <div className="bg-white/10 backdrop-blur-md rounded-full border border-white/15 shadow-2xl p-8 hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105 h-[280px] w-[280px] flex flex-col items-center justify-center text-center">
+                      <div className="mb-4">
+                        <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-red-600 via-purple-700 to-fuchsia-700 flex items-center justify-center shadow-lg">
+                          <span className="text-2xl font-bold text-white">
+                            {member.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
+                          </span>
+                        </div>
+                      </div>
 
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm text-purple-600 dark:text-purple-400 font-medium mb-4">
-                      {member.role}
-                    </p>
+                      <h3 className="text-lg font-bold text-white mb-2 line-clamp-2">
+                        {member.name}
+                      </h3>
 
-                    <div className="space-y-2">
-                      <p className="text-xs font-semibold text-white/90 uppercase tracking-wide">
-                        {isVietnamese ? "Đóng góp chính" : "Key Contributions"}
+                      <p className="text-xs text-purple-400 font-medium mb-3 line-clamp-2 px-2">
+                        {member.role}
                       </p>
-                      <ul className="space-y-1.5">
-                        {member.contributions.map((contribution, idx) => (
-                          <li
-                            key={idx}
-                            className="text-sm text-white/80 flex items-start gap-2"
-                          >
-                            <span className="text-purple-600 mt-1">•</span>
-                            <span>{contribution}</span>
-                          </li>
-                        ))}
-                      </ul>
+
+                      <div className="w-full">
+                        <p className="text-[10px] font-semibold text-white/70 uppercase tracking-wide mb-1">
+                          {isVietnamese ? "Đóng góp" : "Contributions"}
+                        </p>
+                        <div className="space-y-0.5 max-h-16 overflow-y-auto scrollbar-hide">
+                          {member.contributions.slice(0, 3).map((contribution, idx) => (
+                            <p
+                              key={idx}
+                              className="text-[10px] text-white/70 line-clamp-1"
+                            >
+                              • {contribution}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
+              </div>
             </div>
+
+            <style jsx>{`
+              .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+              }
+              .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+              }
+            `}</style>
           </motion.section>
         </motion.div>
       </div>
