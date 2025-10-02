@@ -99,6 +99,15 @@
           "copy": "Sao chép",
           "copied": "Đã sao chép"
         }
+      },
+      "about": {
+        "aiTraining": {
+          "title": "Cách chúng tôi huấn luyện AI",
+          "description": "Chatbot AI của chúng tôi được huấn luyện bằng các prompts và tài liệu cụ thể của dự án để đảm bảo câu trả lời chính xác và đúng chủ đề.",
+          "codeExample": "/train \"Chỉ trả lời các câu hỏi liên quan đến dự án của chúng tôi\"\n/context add syllabus_data.pdf\n/context add quiz_questions.json",
+          "note": "Bằng cách cung cấp prompts và tài liệu, chúng tôi hướng dẫn AI tập trung và hữu ích hơn.",
+          "qrTitle": "Quét để truy cập website"
+        }
       }
     }
   },
@@ -201,6 +210,15 @@
         "buttons": {
           "copy": "Copy",
           "copied": "Copied"
+        }
+      },
+      "about": {
+        "aiTraining": {
+          "title": "How We Train Our AI",
+          "description": "Our AI chatbot is trained using project-specific prompts and documents to ensure accurate, on-topic answers.",
+          "codeExample": "/train \"Answer only questions related to our project\"\n/context add syllabus_data.pdf\n/context add quiz_questions.json",
+          "note": "By feeding prompts and documents, we guide AI to stay focused and helpful.",
+          "qrTitle": "Scan to visit our website"
         }
       }
     }
