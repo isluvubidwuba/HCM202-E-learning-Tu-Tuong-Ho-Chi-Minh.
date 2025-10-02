@@ -79,16 +79,14 @@ The new section has been added to the bottom of the About Us page, located at:
           </h3>
 
           {/* QR Code Placeholder */}
-          <div className="relative aspect-square w-full bg-white rounded-xl p-4 flex items-center justify-center">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <QrCode className="h-32 w-32 text-gray-300" />
+          <div className="relative aspect-square w-full bg-white rounded-xl p-4 flex            items-center justify-center">
+                <img
+                    src="/path/to/your-qr.png"
+                    alt="QR Code"
+                    className="h-32 w-32 object-contain"
+                />
             </div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <p className="text-xs text-gray-400 text-center px-4 mt-40">
-                Replace with actual QR code
-              </p>
-            </div>
-          </div>
+
 
           {/* Description */}
           <p className="text-sm text-white/70">

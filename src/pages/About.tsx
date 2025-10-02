@@ -38,16 +38,18 @@ export default function About() {
         ? [
             "Thiết kế và xây dựng giao diện người dùng",
             "Tích hợp AI Chatbot với Groq",
+               "Lập trình chức năng quiz",
             "Quản lý cơ sở dữ liệu Supabase",
             "Triển khai và bảo trì server",
           ]
         : [
             "Design and build user interface",
             "Integrate AI Chatbot with Groq",
+                    "Program quiz functionality",
             "Manage Supabase database",
             "Deploy and maintain server",
           ],
-      avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
+      avatar: "/image.png",
     },
     {
       name: "Trí Trần",
@@ -96,13 +98,13 @@ export default function About() {
         : "Quiz Development & Testing, Technical Documentation",
       contributions: isVietnamese
         ? [
-            "Lập trình chức năng quiz",
+         
             "Kiểm thử và đảm bảo chất lượng",
             "Viết tài liệu kỹ thuật",
             "Tối ưu hóa trải nghiệm người dùng",
           ]
         : [
-            "Program quiz functionality",
+    
             "Test and ensure quality",
             "Write technical documentation",
             "Optimize user experience",
@@ -117,13 +119,11 @@ export default function About() {
       contributions: isVietnamese
         ? [
             "Thiết kế bài thuyết trình dự án",
-            "Triển khai giao diện quiz",
             "Kiểm thử trải nghiệm người dùng",
             "Thu thập và phân tích phản hồi",
           ]
         : [
             "Design project presentations",
-            "Implement quiz interface",
             "Test user experience",
             "Collect and analyze feedback",
           ],
@@ -328,80 +328,13 @@ export default function About() {
             </motion.section>
           </div>
 
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mb-16"
-          >
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 mb-4">
-                <Users className="h-8 w-8 text-purple-600" />
-                <h2 className="text-3xl font-bold text-white">
-                  {isVietnamese ? "Đội ngũ của chúng tôi" : "Our Team"}
-                </h2>
-              </div>
-              <p className="text-white/85">
-                {isVietnamese
-                  ? "Những người đã xây dựng và phát triển dự án này"
-                  : "The people who built and developed this project"}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {teamMembers.map((member, index) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  whileHover={{ y: -8 }}
-                  className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 shadow-lg overflow-hidden"
-                >
-                  <div className="relative h-48 bg-gradient-to-br from-red-600 via-purple-700 to-fuchsia-700 overflow-hidden">
-                    <img
-                      src={member.avatar}
-                      alt={member.name}
-                      className="w-full h-full object-cover opacity-80 mix-blend-overlay"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  </div>
-
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm text-purple-600 dark:text-purple-400 font-medium mb-4">
-                      {member.role}
-                    </p>
-
-                    <div className="space-y-2">
-                      <p className="text-xs font-semibold text-white/90 uppercase tracking-wide">
-                        {isVietnamese ? "Đóng góp chính" : "Key Contributions"}
-                      </p>
-                      <ul className="space-y-1.5">
-                        {member.contributions.map((contribution, idx) => (
-                          <li
-                            key={idx}
-                            className="text-sm text-white/80 flex items-start gap-2"
-                          >
-                            <span className="text-purple-600 mt-1">•</span>
-                            <span>{contribution}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
+         
 
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-16"
+            className="mb-16"
           >
             <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 shadow-lg p-8 md:p-10">
               <div className="flex items-center gap-3 mb-8">
@@ -449,17 +382,12 @@ export default function About() {
                       {t("about.aiTraining.qrTitle")}
                     </h3>
 
-                    <div className="relative aspect-square w-full bg-white rounded-xl p-4 flex items-center justify-center">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <QrCode className="h-32 w-32 text-gray-300" />
-                      </div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <p className="text-xs text-gray-400 text-center px-4 mt-40">
-                          {isVietnamese
-                            ? "Thay thế bằng mã QR thực tế"
-                            : "Replace with actual QR code"}
-                        </p>
-                      </div>
+                   <div className="relative aspect-square w-full bg-white rounded-xl p-4 flex items-center justify-center">
+                        <img
+                            src="./image.png"
+                            alt="QR Code"
+                            className="h-full w-auto object-contain"
+                        />
                     </div>
 
                     <p className="text-sm text-white/70">
@@ -470,6 +398,68 @@ export default function About() {
                   </div>
                 </div>
               </div>
+            </div>
+          </motion.section>
+           <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-16 "
+            
+          >
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <Users className="h-8 w-8 text-purple-600" />
+                <h2 className="text-3xl font-bold text-white">
+                  {isVietnamese ? "Đội ngũ của chúng tôi" : "Our Team"}
+                </h2>
+              </div>
+              <p className="text-white/85">
+                {isVietnamese
+                  ? "Những người đã xây dựng và phát triển dự án này"
+                  : "The people who built and developed this project"}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {teamMembers.map((member, index) => (
+                <motion.div
+                  key={member.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/15 shadow-lg overflow-hidden"
+                >
+                
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm text-purple-600 dark:text-purple-400 font-medium mb-4">
+                      {member.role}
+                    </p>
+
+                    <div className="space-y-2">
+                      <p className="text-xs font-semibold text-white/90 uppercase tracking-wide">
+                        {isVietnamese ? "Đóng góp chính" : "Key Contributions"}
+                      </p>
+                      <ul className="space-y-1.5">
+                        {member.contributions.map((contribution, idx) => (
+                          <li
+                            key={idx}
+                            className="text-sm text-white/80 flex items-start gap-2"
+                          >
+                            <span className="text-purple-600 mt-1">•</span>
+                            <span>{contribution}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </motion.section>
         </motion.div>

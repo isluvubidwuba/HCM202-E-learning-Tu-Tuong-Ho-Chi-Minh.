@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BookOpen, Facebook, Mail, Twitter, Youtube } from "lucide-react";
+import { BookOpen, Facebook, Mail, Github, Youtube } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -13,9 +13,9 @@ export default function Footer() {
       href: "https://www.facebook.com/thanhKha2606",
       label: "Facebook",
     },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Github, href: "https://github.com/isluvubidwuba/HCM202-E-learning-Tu-Tuong-Ho-Chi-Minh.", label: "Github" },
     { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Mail, href: "mailto:example@example.com", label: "Email" },
+    { icon: Mail, href: "huyhanhoppo@gmail.com", label: "Email" },
   ];
 
   const siteLinks = [
