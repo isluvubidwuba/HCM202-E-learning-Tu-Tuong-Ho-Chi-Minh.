@@ -23,6 +23,7 @@ export default function Footer() {
     { label: t("navigation.chapters"), href: "/chapters" },
     { label: t("navigation.quiz"), href: "/quiz" },
     { label: t("navigation.chat"), href: "/chat" },
+    { label: t("navigation.about"), href: "/about" },
     { label: t("navigation.feedback"), href: "/feedback" },
   ];
 

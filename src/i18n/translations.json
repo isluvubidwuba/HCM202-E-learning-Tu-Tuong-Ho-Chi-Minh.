@@ -7,6 +7,7 @@
         "quiz": "Quiz",
         "feedback": "Phản Hồi",
         "chat": "Trò chuyện AI",
+        "about": "Giới thiệu",
         "language": "Ngôn ngữ"
       },
       "home": {
@@ -109,6 +110,7 @@
         "quiz": "Quiz",
         "feedback": "Feedback",
         "chat": "AI Chat",
+        "about": "About Us",
         "language": "Language"
       },
       "home": {

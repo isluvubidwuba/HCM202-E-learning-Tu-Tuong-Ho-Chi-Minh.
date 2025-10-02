@@ -16,6 +16,7 @@ import Article from "./pages/Article";
 import Quiz from "./pages/Quiz";
 import Feedback from "./pages/Feedback";
 import Chat from "./pages/Chat";
+import About from "./pages/About";
 import "./components/globals.css";
 import "./i18n/i18n";
 
@@ -66,6 +67,7 @@ function AppContent() {
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/feedback" element={<Feedback />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </motion.main>
       </AnimatePresence>

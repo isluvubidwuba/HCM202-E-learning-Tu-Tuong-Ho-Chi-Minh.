@@ -25,6 +25,7 @@ export default function Header() {
     { name: t("navigation.chapters"), href: "/chapters" },
     { name: t("navigation.quiz"), href: "/quiz" },
     { name: t("navigation.chat"), href: "/chat" },
+    { name: t("navigation.about"), href: "/about" },
     { name: t("navigation.feedback"), href: "/feedback" },
   ];
 
