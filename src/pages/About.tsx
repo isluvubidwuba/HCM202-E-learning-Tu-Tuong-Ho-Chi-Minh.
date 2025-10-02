@@ -1,15 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  BookOpen,
-  Bot,
-  Brain,
-  Calendar,
-  Code,
-  Database,
-  Loader2,
-  Server,
-  Users,
-} from "lucide-react";
+import { BookOpen, Bot, Brain, Calendar, Code, Database, Loader as Loader2, Server, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getSystemInfo } from "../utils/systemInfo";
